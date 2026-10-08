@@ -45,7 +45,7 @@ boot, vendor, odm и product остаются заводскими, поэтом
 
 ```bash
 mkdir picomisu && cd picomisu
-repo init -u https://github.com/BearIvan/picomisu_manifest.git -b main --depth=1
+repo init -u https://github.com/BearIvan/picomisu.git -b main --depth=1
 repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 ```
 
@@ -157,8 +157,8 @@ picomisu/build.sh
 
 | Репозиторий | Путь | Содержимое |
 |---|---|---|
-| `picomisu_manifest` | — | этот манифест, `CHANGELOG.md` |
-| `picomisu` | `picomisu` | `build.sh`, инструменты релиза, OTA и проверок |
+| `picomisu` | — | этот манифест, `CHANGELOG.md` |
+| `picomisu_tools` | `picomisu` | `build.sh`, инструменты релиза, OTA и проверок |
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree, `release.json`, `extract-files.py` |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | демон данных отслеживания лица и глаз (форк thoricelli, MIT) |
 | `picomisu_<путь>` × 30 | `frameworks/base`, `art`, … | проекты CAF с изменениями Picomisu, ветка `picomisu` |

@@ -46,7 +46,7 @@ PICO OS **5.13.7**.
 
 ```bash
 mkdir picomisu && cd picomisu
-repo init -u https://github.com/BearIvan/picomisu_manifest.git -b main --depth=1
+repo init -u https://github.com/BearIvan/picomisu.git -b main --depth=1
 repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 ```
 
@@ -159,8 +159,8 @@ All repositories are private, at github.com/BearIvan:
 
 | Repository | Path | Contents |
 |---|---|---|
-| `picomisu_manifest` | — | this manifest, `CHANGELOG.md` |
-| `picomisu` | `picomisu` | `build.sh`, release, OTA and check tools |
+| `picomisu` | — | this manifest, `CHANGELOG.md` |
+| `picomisu_tools` | `picomisu` | `build.sh`, release, OTA and check tools |
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree, `release.json`, `extract-files.py` |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | face/eye tracking data daemon (fork of thoricelli, MIT) |
 | `picomisu_<path>` × 30 | `frameworks/base`, `art`, … | CAF projects with Picomisu changes, branch `picomisu` |
