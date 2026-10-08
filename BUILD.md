@@ -61,12 +61,9 @@ repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 Стабильные релизы с зафиксированными хешами коммитов (`refs/tags/<версия>` манифеста) пока
 не выпускаются.
 
-Инструменты сборки образа и установки живут в отдельном репозитории:
-
-```bash
-git clone https://github.com/BearIvan/picomisu.git ~/picomisu
-git clone https://github.com/BearIvan/picomisu_device_pico_PICOA8110.git ~/picomisu/device/pico/PICOA8110
-```
+Вместе с исходниками `repo` скачивает инструменты сборки образа и установки в `picomisu/`.
+Отдельно клонировать ничего не нужно. Ссылка `picomisu/device` указывает на `device/` дерева,
+а файл `.find-ignore` скрывает `picomisu/` от сборочной системы.
 
 ## Обновление дерева
 
@@ -143,7 +140,7 @@ lunch aosp_pico4pro-userdebug
 ## Сборка
 
 ```bash
-PICOMISU_TREE=$PWD PICOMISU_HOST_COMPAT=HOST_COMPAT_LIB_DIR ~/picomisu/build/build-caf.sh
+PICOMISU_HOST_COMPAT=HOST_COMPAT_LIB_DIR picomisu/build/build-caf.sh
 ```
 
 По умолчанию собирается цель `systemimage`; другие цели передаются аргументами.
@@ -157,7 +154,7 @@ PICOMISU_TREE=$PWD PICOMISU_HOST_COMPAT=HOST_COMPAT_LIB_DIR ~/picomisu/build/bui
 `img2simg`, `simg2img`, `zipalign`, `avbtool` и другие) собираются той же командой:
 
 ```bash
-~/picomisu/build/build-caf.sh apksigner aapt2 e2fsck e2fsdroid img2simg mke2fs simg2img zipalign checkvintf avbtool signapk
+picomisu/build/build-caf.sh apksigner aapt2 e2fsck e2fsdroid img2simg mke2fs simg2img zipalign checkvintf avbtool signapk
 ```
 
 ## Ключи подписи
@@ -183,11 +180,10 @@ PICOMISU_TREE=$PWD PICOMISU_HOST_COMPAT=HOST_COMPAT_LIB_DIR ~/picomisu/build/bui
 - подписывает AVB (`vbmeta_system`, `vbmeta`) и проверяет образ обратным чтением.
 
 ```bash
-cd ~/picomisu
-build/assemble-release.sh VERSION BASE_VERSION
+picomisu/build/assemble-release.sh VERSION BASE_VERSION
 ```
 
-Например, `build/assemble-release.sh 2.21 2.20` берёт конфиг
+Например, `picomisu/build/assemble-release.sh 2.21 2.20` берёт конфиг
 `device/pico/PICOA8110/source-2.21.json` и строит дельту от 2.20.
 Результат: `outputs/source-VERSION/{system,vbmeta_system,vbmeta}.img` и `SHA256SUMS.txt`.
 

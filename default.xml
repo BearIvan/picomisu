@@ -818,4 +818,5 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="toolchain/pgo-profiles" revision="270d8380aab2949d2df4fc33ad67769245749529" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project path="device/pico/PICOA8110" name="picomisu_device_pico_PICOA8110" remote="picomisu" revision="picomisu"/>
   <project path="external/picofacialdatadaemon" name="picomisu_external_picofacialdatadaemon" remote="picomisu" revision="picomisu"/>
+  <project path="picomisu" name="picomisu" remote="picomisu" revision="main"/>
 </manifest>

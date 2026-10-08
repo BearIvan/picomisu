@@ -18,7 +18,7 @@ vendor/odm/product PICO OS 5.13.7. Заменяется только разде�
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree шлема, `extract-files.py` |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | демон данных FT/ET (форк thoricelli, MIT) |
 | `picomisu_<путь>` × 30 | `art`, `frameworks/base`, … | форки проектов CAF с нашими изменениями |
-| `picomisu` | отдельно, на ПК | инструменты сборки образа, OTA, проверки, исследования |
+| `picomisu` | `picomisu` | инструменты сборки образа, OTA, проверки, исследования |
 | `picomisu_PicoFacialDataModule` | отдельно, на ПК | модуль VRCFaceTracking для ПК (форк thoricelli) |
 
 Форки CAF: ветка `picomisu` = один коммит с исходным деревом тега CAF
