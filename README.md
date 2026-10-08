@@ -36,11 +36,6 @@ PICO OS **5.13.7**.
   ```bash
   sudo apt install python3-brotli e2fsprogs rsync binutils
   ```
-- git access to github.com/BearIvan, because the repositories are private:
-
-  ```bash
-  gh auth login && gh auth setup-git
-  ```
 
 ### Downloading the source
 
@@ -155,13 +150,14 @@ to be changed, the change is stored as a binary patch (the `patch` field, applie
 
 ## Repositories
 
-All repositories are private, at github.com/BearIvan:
+All repositories are at github.com/BearIvan:
 
 | Repository | Path | Contents |
 |---|---|---|
 | `picomisu` | — | this manifest, `CHANGELOG.md` |
 | `picomisu_tools` | `picomisu` | `build.sh`, release, OTA and check tools |
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree, `release.json`, `extract-files.py` |
+| `picomisu_external_gwp_asan` | `external/gwp_asan` | GWP-ASan from AOSP (Apache 2.0), as in the factory libc |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | face/eye tracking data daemon (fork of thoricelli, MIT) |
 | `picomisu_<path>` × 30 | `frameworks/base`, `art`, … | CAF projects with Picomisu changes, branch `picomisu` |
 | `picomisu_PicoFacialDataModule` | not in the tree | VRCFaceTracking module for the PC (fork of thoricelli) |

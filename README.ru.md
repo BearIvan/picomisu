@@ -35,11 +35,6 @@ boot, vendor, odm и product остаются заводскими, поэтом
   ```bash
   sudo apt install python3-brotli e2fsprogs rsync binutils
   ```
-- Доступ git к github.com/BearIvan, потому что репозитории приватные:
-
-  ```bash
-  gh auth login && gh auth setup-git
-  ```
 
 ### Загрузка исходников
 
@@ -153,13 +148,14 @@ picomisu/build.sh
 
 ## Репозитории
 
-Все репозитории приватные, на github.com/BearIvan:
+Все репозитории — на github.com/BearIvan:
 
 | Репозиторий | Путь | Содержимое |
 |---|---|---|
 | `picomisu` | — | этот манифест, `CHANGELOG.md` |
 | `picomisu_tools` | `picomisu` | `build.sh`, инструменты релиза, OTA и проверок |
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree, `release.json`, `extract-files.py` |
+| `picomisu_external_gwp_asan` | `external/gwp_asan` | GWP-ASan из AOSP (Apache 2.0), как в заводской libc |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | демон данных отслеживания лица и глаз (форк thoricelli, MIT) |
 | `picomisu_<путь>` × 30 | `frameworks/base`, `art`, … | проекты CAF с изменениями Picomisu, ветка `picomisu` |
 | `picomisu_PicoFacialDataModule` | вне дерева | модуль VRCFaceTracking для ПК (форк thoricelli) |
