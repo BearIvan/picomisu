@@ -115,32 +115,57 @@ picomisu/build.sh
 
 ## Installing
 
-> **Installing over the factory system erases userdata** (games, recordings and settings).
+> **The first install over the factory system erases userdata** (games, recordings and settings).
 
 Requirements:
 
-- A PICO 4 Pro on factory PICO OS 5.13.7.
-- An unlocked bootloader.
-- Root on the factory system (Magisk), used to write the updater recovery.
-- Developer options and USB debugging enabled.
+- A PICO 4 Pro on factory PICO OS 5.13.7, or on Picomisu.
+- An unlocked bootloader. The 5.13.7 bootloader refuses to unlock without a PICO token. The
+  author's headset is unlocked with an older PICO-signed ABL (2022) in `abl`. Do not restore the
+  5.13.7 ABL: the headset would lock again.
+- For the first install, root on the factory system (Magisk), used once to write the updater
+  recovery. Picomisu `userdebug` builds have `adb root`.
+- Developer options and USB debugging enabled, a USB cable and `adb`.
 
-The 5.13.7 bootloader refuses to unlock without a PICO token. The author's headset is
-unlocked with an older PICO-signed ABL (2022) in `abl`. Do not restore the 5.13.7 ABL: the
-headset would lock again.
+First install, from the factory system:
 
-How the install works: the PICO 4 Pro has no A/B slots, so `system` is written from recovery.
-`picomisu/tools/source-ota.py` first writes an updater recovery: the factory recovery with
-root ADB and `device/pico/PICOA8110/source-updater.sh` added. From that recovery it maps
-`system` inside `super` without changing the LP metadata, and streams `system`,
-`vbmeta_system` and `vbmeta`. It checks the SHA-256 of each before and after writing. The
-first install also wipes userdata.
+```bash
+picomisu/install.sh --wipe
+```
 
-After that, updates go over Wi-Fi with ADB, or through the in-headset **Source Update** app.
-`switch factory-5.13.7` returns the headset to the factory system.
+Update to a newer build, keeping data:
 
-**Installation is not yet adapted to this repository layout.** `source-ota.py` still expects
-the author's Windows workspace (`adb.exe` from the Android SDK, the per-release configs). A
-single `picomisu/install.sh` is the next step.
+```bash
+picomisu/install.sh
+```
+
+Back to factory PICO OS 5.13.7 (erases userdata and restores the factory recovery):
+
+```bash
+picomisu/install.sh factory
+```
+
+`picomisu/install.sh status` shows the release and the recovery on the headset.
+
+How it works: the PICO 4 Pro has no A/B slots, so `system` is written from recovery. If the
+recovery partition does not hold the Picomisu updater yet, the installer builds it from the
+factory recovery of the pinned OTA and writes it. The updater is the factory recovery with root
+ADB, its UI disabled, the factory `dmctl` and `source-updater.sh` added. The installer then
+reboots into it and maps `system` inside `super` with `dmctl`. It reads the LP metadata from
+the headset and checks it, but never writes it. It streams `system`, `vbmeta_system` and
+`vbmeta` in verified chunks and checks every partition's SHA-256 by reading it back. If the
+cable comes off, run the same command again: it continues in the recovery, and partitions that
+are already written are skipped.
+
+The updater recovery has no Wi-Fi, so the headset must be on USB. WSL does not see USB devices
+(without `usbipd`). There, run the installer with Windows Python and Windows `adb` on the same
+tree:
+
+```bash
+python \wsl.localhost\Ubuntu-24.04\path\to\picomisu\picomisu\tools\picomisu-install.py
+```
+
+Updates can also come over Wi-Fi through the in-headset **Source Update** app.
 
 ## Factory files
 
@@ -185,6 +210,9 @@ distribution. Release keys are not set up yet.
 - The build and install have been tested on one headset (SEKO, INNOLUX5K panel).
 - `userdebug` is the tested variant. `user` builds, but has not been tested on a headset.
 - PICO telemetry is not ported, on purpose.
+- `install.sh` has been tested on the headset updating Picomisu to Picomisu. The first install from
+  the factory system (the updater recovery write and the wipe) and `install.sh factory` have not been
+  run with it yet; they use the same steps as the author's earlier installs.
 
 ## License
 
