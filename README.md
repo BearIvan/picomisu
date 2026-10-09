@@ -76,6 +76,10 @@ The result is in `out/picomisu/outputs/source-<version>/`: `system.img`, `vbmeta
 The steps that loop-mount images read-only run through `sudo`, so the script asks for your
 password. Start it as a normal user, not as root.
 
+On `userdebug` builds, the image trusts the ADB key `~/.android/adbkey.pub` of the user who
+builds it (`/adb_keys`). Build as the same user whose `adb` you will connect with. If you build
+in WSL but run `adb` on Windows, copy the Windows `adbkey.pub` into `~/.android` first.
+
 ### Options
 
 Set these as environment variables:
@@ -85,6 +89,7 @@ Set these as environment variables:
 | `PICOMISU_BOOT=boot.img` | The boot image your headset runs, for example a Magisk boot read from it. `vbmeta` records its hash. The default is the factory boot from the OTA. |
 | `PICOMISU_VARIANT=user` | Build a `user` image instead of `userdebug`. |
 | `JOBS=16` | Number of parallel build jobs. The default is 8. |
+| `PICOMISU_CPUS=0-7` | Pin the build to these CPUs (`taskset` list). The default is no pinning. |
 | `OUT_DIR`, `PICOMISU_WORK` | Build output directory and work directory. The defaults are `out/` and `out/picomisu/`. |
 
 ### Updating and stable releases
@@ -96,13 +101,12 @@ repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 picomisu/build.sh
 ```
 
-**No release is tagged yet.** The `main` branch of this manifest follows the development
-branch of every project, so for now only the current state can be built. Releases will be
-tagged with their version once they have been tested on the headset; under the tag, the
-manifest will pin the exact commit of every project. Then a release can be rebuilt like this:
+The `main` branch of this manifest follows the development branch of every project.
+Releases are tagged with their version once they have been tested on the headset. Under the
+tag, the manifest pins the exact commit of every project. The latest release is **2.21**:
 
 ```bash
-repo init -b refs/tags/VERSION
+repo init -b refs/tags/2.21
 repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 picomisu/build.sh
 ```
