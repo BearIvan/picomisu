@@ -22,6 +22,7 @@ boot, vendor, odm и product остаются заводскими, поэтом
 - [Репозитории](#репозитории)
 - [Ключи подписи](#ключи-подписи)
 - [Известные ограничения](#известные-ограничения)
+- [Лицензия](#лицензия)
 
 ## Сборка
 
@@ -94,11 +95,13 @@ repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 picomisu/build.sh
 ```
 
-Каждый релиз помечен тегом с его версией. Тег этого манифеста закрепляет точный коммит
-каждого проекта, поэтому пересобрать релиз можно так:
+**Релизы пока не помечены тегами.** Ветка `main` этого манифеста следует за веткой
+разработки каждого проекта, поэтому сейчас собрать можно только текущее состояние. Релизы
+будут помечаться тегом с версией после проверки на шлеме. Под тегом манифест будет закреплять
+точный коммит каждого проекта, и пересобрать релиз можно будет так:
 
 ```bash
-repo init -b refs/tags/2.21
+repo init -b refs/tags/ВЕРСИЯ
 repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 picomisu/build.sh
 ```
@@ -155,7 +158,7 @@ picomisu/build.sh
 | `picomisu` | — | этот манифест, `CHANGELOG.md` |
 | `picomisu_tools` | `picomisu` | `build.sh`, инструменты релиза, OTA и проверок |
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree, `release.json`, `extract-files.py` |
-| `picomisu_external_gwp_asan` | `external/gwp_asan` | GWP-ASan из AOSP (Apache 2.0), как в заводской libc |
+| `picomisu_external_gwp_asan` | `external/gwp_asan` | GWP-ASan из AOSP/LLVM (Apache-2.0 with LLVM Exceptions), как в заводской libc |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | демон данных отслеживания лица и глаз (форк thoricelli, MIT) |
 | `picomisu_<путь>` × 30 | `frameworks/base`, `art`, … | проекты CAF с изменениями Picomisu, ветка `picomisu` |
 | `picomisu_PicoFacialDataModule` | вне дерева | модуль VRCFaceTracking для ПК (форк thoricelli) |
@@ -176,3 +179,15 @@ picomisu/build.sh
 - Сборка и установка проверены на одном шлеме (SEKO, панель INNOLUX5K).
 - Проверен вариант `userdebug`. `user` собирается, но на шлеме не проверялся.
 - Телеметрия PICO не перенесена, сознательно.
+
+## Лицензия
+
+Код Picomisu в `picomisu` (этот манифест), `picomisu_tools` и `picomisu_device_pico_PICOA8110`
+распространяется по [GNU General Public License v3.0](LICENSE).
+
+Код, взятый из других проектов, сохраняет свою лицензию:
+
+- Форки CAF/AOSP — лицензии своих исходных проектов (в основном Apache-2.0).
+- `picomisu_tools/tools/third_party/avb` (avbtool) — MIT.
+- `picomisu_external_gwp_asan` (из LLVM) — Apache-2.0 with LLVM Exceptions.
+- `picomisu_external_picofacialdatadaemon` и `picomisu_PicoFacialDataModule` — MIT.

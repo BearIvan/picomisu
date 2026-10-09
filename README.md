@@ -23,6 +23,7 @@ PICO OS **5.13.7**.
 - [Repositories](#repositories)
 - [Signing keys](#signing-keys)
 - [Known limitations](#known-limitations)
+- [License](#license)
 
 ## Building
 
@@ -95,11 +96,13 @@ repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 picomisu/build.sh
 ```
 
-Each release is tagged with its version. The tag of this manifest pins the exact commit of
-every project, so to rebuild a release:
+**No release is tagged yet.** The `main` branch of this manifest follows the development
+branch of every project, so for now only the current state can be built. Releases will be
+tagged with their version once they have been tested on the headset; under the tag, the
+manifest will pin the exact commit of every project. Then a release can be rebuilt like this:
 
 ```bash
-repo init -b refs/tags/2.21
+repo init -b refs/tags/VERSION
 repo sync -c -j8 --no-tags --no-clone-bundle --optimized-fetch
 picomisu/build.sh
 ```
@@ -157,7 +160,7 @@ All repositories are at github.com/BearIvan:
 | `picomisu` | — | this manifest, `CHANGELOG.md` |
 | `picomisu_tools` | `picomisu` | `build.sh`, release, OTA and check tools |
 | `picomisu_device_pico_PICOA8110` | `device/pico/PICOA8110` | device tree, `release.json`, `extract-files.py` |
-| `picomisu_external_gwp_asan` | `external/gwp_asan` | GWP-ASan from AOSP (Apache 2.0), as in the factory libc |
+| `picomisu_external_gwp_asan` | `external/gwp_asan` | GWP-ASan from AOSP/LLVM (Apache-2.0 with LLVM Exceptions), as in the factory libc |
 | `picomisu_external_picofacialdatadaemon` | `external/picofacialdatadaemon` | face/eye tracking data daemon (fork of thoricelli, MIT) |
 | `picomisu_<path>` × 30 | `frameworks/base`, `art`, … | CAF projects with Picomisu changes, branch `picomisu` |
 | `picomisu_PicoFacialDataModule` | not in the tree | VRCFaceTracking module for the PC (fork of thoricelli) |
@@ -178,3 +181,16 @@ distribution. Release keys are not set up yet.
 - The build and install have been tested on one headset (SEKO, INNOLUX5K panel).
 - `userdebug` is the tested variant. `user` builds, but has not been tested on a headset.
 - PICO telemetry is not ported, on purpose.
+
+## License
+
+The Picomisu code in `picomisu` (this manifest), `picomisu_tools` and
+`picomisu_device_pico_PICOA8110` is licensed under the
+[GNU General Public License v3.0](LICENSE).
+
+Code taken from other projects keeps its own license:
+
+- The CAF/AOSP forks keep the licenses of their upstream projects (mostly Apache-2.0).
+- `picomisu_tools/tools/third_party/avb` (avbtool) is MIT.
+- `picomisu_external_gwp_asan` (from LLVM) is Apache-2.0 with LLVM Exceptions.
+- `picomisu_external_picofacialdatadaemon` and `picomisu_PicoFacialDataModule` are MIT.
