@@ -38,22 +38,22 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="device/google_car" revision="117ed0328b5a09b1b09c8de520379f5344ffb5ae" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,device,pdk,poplar" name="device/linaro/poplar" revision="eae1a3c9c5563196556b4f698839c3a50efac82d" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,device,pdk,poplar" name="device/linaro/poplar-kernel" revision="5f58a9c755b269575cac24a1563b03a510efe59a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project name="picomisu_device_qcom_common" remote="picomisu" revision="picomisu" path="device/qcom/common">
+  <project name="picomisu_device_qcom_common" remote="picomisu" revision="8ac64b4be9b2d74ea5952f4cf5e04762ecc46b44" upstream="refs/tags/2.21" path="device/qcom/common">
     <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
     <linkfile dest="kernel/Android.mk" src="stop_scan.mk"/>
     <linkfile dest="disregard/Android.mk" src="stop_scan.mk"/>
   </project>
   <project dest-branch="refs/heads/qcom-devices.lnx.5.0" name="device/qcom/qssi" revision="4cfc4ef95feb53050b7991eee2f07a22f011b17b" upstream="refs/heads/qcom-devices.lnx.5.0"/>
-  <project name="picomisu_device_qcom_sepolicy" remote="picomisu" revision="picomisu" path="device/qcom/sepolicy"/>
+  <project name="picomisu_device_qcom_sepolicy" remote="picomisu" revision="4ce4784d7b8650be8f2dbcbb0de971f75badd15a" upstream="refs/tags/2.21" path="device/qcom/sepolicy"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="device/sample" revision="ebdc9d9f21405a85f0522beb3991ba7e4bf393c7" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/msm-4.19.c1" name="kernel/build" path="device/qcom/kernelscripts" revision="49e881ecfdfc4667fa54822ee628b8be41f10ede" upstream="refs/heads/msm-4.19.c1"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk,vts" name="kernel/configs" revision="cadf1c40490ecb11dd8bfa31f728e52689c5ece1" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/msm-4.19.c1" groups="cyborg" name="kernel/msm-4.19" revision="7404ecc40f059356369458a0b17786b22847805b" upstream="refs/heads/msm-4.19.c1"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk,vts" name="kernel/tests" revision="dc7142d83fbb35e85babf1b80f3d6dba761df449" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_art" remote="picomisu" revision="picomisu" path="art"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_bionic" remote="picomisu" revision="picomisu" path="bionic"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_art" remote="picomisu" revision="2f2357eb109bca104e59333f483b914bcd9da9cc" upstream="refs/tags/2.21" path="art"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_bionic" remote="picomisu" revision="e62e56557eb30ce0f881ee3c39a742d5fabea9d9" upstream="refs/tags/2.21" path="bionic"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/bootable/recovery" path="bootable/recovery" revision="550ad882f1c54d9811f6a80d8b62254709923053" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_build_make" remote="picomisu" revision="picomisu" path="build/make">
+  <project groups="aosp-android10-release,pdk" name="picomisu_build_make" remote="picomisu" revision="402c30bbb2fb1f24074ec4e4e4c5f521c79a28ef" upstream="refs/tags/2.21" path="build/make">
     <copyfile dest="Makefile" src="core/root.mk"/>
     <linkfile dest="build/CleanSpec.mk" src="CleanSpec.mk"/>
     <linkfile dest="build/buildspec.mk.default" src="buildspec.mk.default"/>
@@ -64,7 +64,7 @@
   </project>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk,tradefed" name="platform/build/blueprint" path="build/blueprint" revision="f0a2bd670313aeb194aa9ed2c9f4929d383123dc" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk,tradefed" name="platform/build/kati" path="build/kati" revision="f90180b1ad6a42314ea5e35c80ab439220605c4a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk,tradefed" name="picomisu_build_soong" remote="picomisu" revision="picomisu" path="build/soong">
+  <project groups="aosp-android10-release,pdk,tradefed" name="picomisu_build_soong" remote="picomisu" revision="7450c9bf02d43aa7c172948ce7279b93d4f86832" upstream="refs/tags/2.21" path="build/soong">
     <linkfile dest="Android.bp" src="root.bp"/>
     <linkfile dest="bootstrap.bash" src="bootstrap.bash"/>
   </project>
@@ -73,7 +73,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,developers,pdk" name="platform/developers/build" path="developers/build" revision="8bf020b07bddcfdd21aff78f696c76e72c03f427" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,developers" name="platform/developers/demos" path="developers/demos" revision="7377b04ff64f892554ce5a74cceadeafd80e7516" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,developers" name="platform/developers/samples/android" path="developers/samples/android" revision="d3b595718487478ada1da2941bce82568fa371e1" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,developers,pdk-cw-fs,pdk-fs" name="picomisu_development" remote="picomisu" revision="picomisu" path="development"/>
+  <project groups="aosp-android10-release,developers,pdk-cw-fs,pdk-fs" name="picomisu_development" remote="picomisu" revision="22b89c1243797a37ab8e161d37bcf238dd8b2583" upstream="refs/tags/2.21" path="development"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/ARMComputeLibrary" path="external/ARMComputeLibrary" revision="23a16533b968b01c0fab733dd13dc418bd8434ef" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/ImageMagick" path="external/ImageMagick" revision="1bfcda37b4941e1b8043c568e8f6fc6cd2024f8a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/Microsoft-GSL" path="external/Microsoft-GSL" revision="3713092bb3caf0ebcadf8e8ddfb28b29d727273b" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -138,7 +138,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/drrickorang" path="external/drrickorang" revision="d6b8e12d66f0070e6aca06c15df1b1d28253d334" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/dtc" path="external/dtc" revision="51345dee2d91802c713aa909164cf8e3c02ceccb" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/dynamic_depth" path="external/dynamic_depth" revision="b65598c91c6e8994cf361814d78547cd80abbe1a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_external_e2fsprogs" remote="picomisu" revision="picomisu" path="external/e2fsprogs"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_external_e2fsprogs" remote="picomisu" revision="89a7ad60ff93175fcfda9a499bd19f7448897f49" upstream="refs/tags/2.21" path="external/e2fsprogs"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/easymock" path="external/easymock" revision="ae7da87a374885e5fe514dfe7892ffc893ec767a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/eigen" path="external/eigen" revision="27ca1c329e6434435b18b0b45d45ba313532d245" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/elfutils" path="external/elfutils" revision="8719d141861c46a7bbf3a301549470e176483e9b" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -304,7 +304,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/pcre" path="external/pcre" revision="4e2927314b4d977e504e8323bc6c143358081447" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/pdfium" path="external/pdfium" revision="50ce9e05b8ff44207909f38e539f399d2a21c96d" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/perf_data_converter" path="external/perf_data_converter" revision="13659264bda48620f7d69dc024220a83f4d36d49" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_external_perfetto" remote="picomisu" revision="picomisu" path="external/perfetto"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_external_perfetto" remote="picomisu" revision="391f6c5243e9680864b39034b37dbbd6a32fc398" upstream="refs/tags/2.21" path="external/perfetto"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/piex" path="external/piex" revision="97fce3fb39497c9fec1c5e9d764c8556ca6b07df" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/ply" path="external/ply" revision="6fdbdb34ab7863aec716491c42daec7de5c105aa" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/ppp" path="external/ppp" revision="29619f02abf0df6da8ad21d8374b3b8a2f789eb1" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -404,7 +404,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/tcpdump" path="external/tcpdump" revision="018159cf15ff3be16992bba1a77de7ea42b928fc" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/tensorflow" path="external/tensorflow" revision="df3e0c158ed9e22a95114881da6d136410d6468d" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/testng" path="external/testng" revision="391f524da69e437c7745be35ae7dbac4d35f2920" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_external_tinyalsa" remote="picomisu" revision="picomisu" path="external/tinyalsa"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_external_tinyalsa" remote="picomisu" revision="5d3991a45e5e0c7a7ace22ab4dba4cddf800c6b5" upstream="refs/tags/2.21" path="external/tinyalsa"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/tinycompress" path="external/tinycompress" revision="772140383f1b8e4003be83bfa0618948094bfe60" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/tinyxml" path="external/tinyxml" revision="f16101fc82c06217fbd1b58c0aff6143f8fd049c" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/tinyxml2" path="external/tinyxml2" revision="29d44df044798c308abe41fc4f8014debd29c42a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -439,18 +439,18 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/zlib" path="external/zlib" revision="6ab7a275844849ca0fd1d62eec52a476b346f23f" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/zopfli" path="external/zopfli" revision="5baf48738c40ff5e03dfd648f5c5c484f7988c8b" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/external/zxing" path="external/zxing" revision="3782a71dea8f63faf50a3c369e521105c8d9a3e5" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_av" remote="picomisu" revision="picomisu" path="frameworks/av"/>
-  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_frameworks_base" remote="picomisu" revision="picomisu" path="frameworks/base"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_av" remote="picomisu" revision="7a9faf29696eea0f42e858179102b55395ba9819" upstream="refs/tags/2.21" path="frameworks/av"/>
+  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_frameworks_base" remote="picomisu" revision="2d9d58589796257ddf037ec6e3a6f56fb219fea0" upstream="refs/tags/2.21" path="frameworks/base"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/compile/libbcc" path="frameworks/compile/libbcc" revision="5f64233f5aef1c191be650a8518b713fd4096409" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/compile/mclinker" path="frameworks/compile/mclinker" revision="9c8c53d7cd34500bdbeeea9f34d3781ec4cb6655" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/compile/slang" path="frameworks/compile/slang" revision="43dddc56978dc94be06382657dea2770567d43f9" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/ex" path="frameworks/ex" revision="8dad83d6ad1a21db804607bbd23cb67163359841" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/hardware/interfaces" path="frameworks/hardware/interfaces" revision="e00b2b109299558f702fa930edebc686722dd3d3" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_frameworks_layoutlib" remote="picomisu" revision="picomisu" path="frameworks/layoutlib"/>
+  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_frameworks_layoutlib" remote="picomisu" revision="0f80c3b86ba6bf5d3c0c826d4505b406cdffab7a" upstream="refs/tags/2.21" path="frameworks/layoutlib"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/minikin" path="frameworks/minikin" revision="002258d9cf73d020b878aa1c27b34ae2c5fb710a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/ml" path="frameworks/ml" revision="fc4d0d02c992baa1fc43058d922a1b7437353b23" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/multidex" path="frameworks/multidex" revision="1c4b0a757a9619aa34241487f87b4c57be826e0d" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_native" remote="picomisu" revision="picomisu" path="frameworks/native"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_native" remote="picomisu" revision="e2d66e1af6a474665159543fa6afd1b8ff387d6d" upstream="refs/tags/2.21" path="frameworks/native"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-fs" name="platform/frameworks/opt/bitmap" path="frameworks/opt/bitmap" revision="aa36fe5bb8957bc09b14aa865c0d0e29be395f23" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/opt/calendar" path="frameworks/opt/calendar" revision="44eb4a9dc30fcfec71c4293b240125064a5f3c81" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-fs" name="platform/frameworks/opt/car/services" path="frameworks/opt/car/services" revision="0f0835ba47bc453bfd60077202ccb76cc6b1e9cd" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -462,11 +462,11 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-fs" name="platform/frameworks/opt/net/ethernet" path="frameworks/opt/net/ethernet" revision="0540d734c4085480607321fc76dfb2ff6e94c3c1" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/opt/net/ike" path="frameworks/opt/net/ike" revision="98876d1ec442f8575c89cd106f795828bbe17f35" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,frameworks_ims,pdk-cw-fs,pdk-fs" name="platform/frameworks/opt/net/ims" path="frameworks/opt/net/ims" revision="50d631fafae66cdbe7edd96b385ed02a5f093cff" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_frameworks_opt_net_voip" remote="picomisu" revision="picomisu" path="frameworks/opt/net/voip"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_opt_net_wifi" remote="picomisu" revision="picomisu" path="frameworks/opt/net/wifi"/>
+  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_frameworks_opt_net_voip" remote="picomisu" revision="ff119ccd2f5dcf6d725f5d16834c7c99aae79deb" upstream="refs/tags/2.21" path="frameworks/opt/net/voip"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_opt_net_wifi" remote="picomisu" revision="a26cf4b5d1c6ae2752642aff71f6953629ae40ed" upstream="refs/tags/2.21" path="frameworks/opt/net/wifi"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/opt/photoviewer" path="frameworks/opt/photoviewer" revision="80e0caecf3ffc3a263591bf51695bf47ae6b9f16" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/opt/setupwizard" path="frameworks/opt/setupwizard" revision="c2b7d076755ab8694995856e7c7bbe784fc04f39" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_opt_telephony" remote="picomisu" revision="picomisu" path="frameworks/opt/telephony"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_frameworks_opt_telephony" remote="picomisu" revision="756bb991d8971fcdb0e6988e6248a9639fb51ad9" upstream="refs/tags/2.21" path="frameworks/opt/telephony"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/opt/timezonepicker" path="frameworks/opt/timezonepicker" revision="51c07b067b54c427a92fc0fd58885b619fd0bb1a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/frameworks/opt/vcard" path="frameworks/opt/vcard" revision="156dec1011aa3efc0aab0427428d9697b96481c2" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/frameworks/rs" path="frameworks/rs" revision="0c8a1cb385284446e5ea2e7a214f7f0322ff0107" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -476,7 +476,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,easel,pdk" name="platform/hardware/google/easel" path="hardware/google/easel" revision="aebbf921f20f34b3360c0e119534bf67b9326472" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/hardware/google/interfaces" path="hardware/google/interfaces" revision="301d8fc67a6e86889047d6ed8a7372181c2dd70a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,generic_fs,pixel" name="platform/hardware/google/pixel" path="hardware/google/pixel" revision="33b1357e7db2a2a6c8bdb04988711ecefe90c4de" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_hardware_interfaces" remote="picomisu" revision="picomisu" path="hardware/interfaces"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_hardware_interfaces" remote="picomisu" revision="ea215daf64420b44f519ca1e01e95f53169d7571" upstream="refs/tags/2.21" path="hardware/interfaces"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,invensense,pdk" name="platform/hardware/invensense" path="hardware/invensense" revision="86ed606639b2e61035897c588654f39c5b69405c" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/hardware/libhardware" path="hardware/libhardware" revision="618c2330ffc4c7c1772de16aeac6bd7276b69032" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/hardware/libhardware_legacy" path="hardware/libhardware_legacy" revision="f4f461f1244442b389b3d2af5dd5ac165408572f" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -501,7 +501,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/hardware/st/nfc" path="hardware/st/nfc" revision="4fe852b8fa9fa53ffd4ab426a4b9ebcd8cddcc6a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/hardware/st/secure_element" path="hardware/st/secure_element" revision="640a7e4cb2f34089afecbc568f765a99da18588e" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/hardware/ti/am57x" path="hardware/ti/am57x" revision="41bb1ecdb1480e4bf2fb3cc6074129abba178bea" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_libcore" remote="picomisu" revision="picomisu" path="libcore"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_libcore" remote="picomisu" revision="1ac3db47a15c57577870a8155a8c292621954593" upstream="refs/tags/2.21" path="libcore"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/libnativehelper" path="libnativehelper" revision="13b3cdc03f14fb534b596c498f6a8b412984ee2d" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/packages/apps/BasicSmsReceiver" path="packages/apps/BasicSmsReceiver" revision="6c7d0c88874e5377f0d27301aba6e4fff07c3bc0" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-fs" name="platform/packages/apps/Browser2" path="packages/apps/Browser2" revision="553e2a5764a0ee57ed3352303cfd6e601eb3c305" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -591,7 +591,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/packages/modules/ExtServices" path="packages/modules/ExtServices" revision="50a221a7b5557f6accdcf3fa67765bc315c4fdfd" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/packages/modules/ModuleMetadata" path="packages/modules/ModuleMetadata" revision="98ddffe3ddbfcbe0d91e2a3ca31bc08fa5679973" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="platform/packages/modules/NetworkPermissionConfig" path="packages/modules/NetworkPermissionConfig" revision="e4a595f1499153c66b3788cce56f1058ca79d7f7" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_packages_modules_NetworkStack" remote="picomisu" revision="picomisu" path="packages/modules/NetworkStack"/>
+  <project groups="aosp-android10-release,pdk-cw-fs,pdk-fs" name="picomisu_packages_modules_NetworkStack" remote="picomisu" revision="943330ffa7a19645ed63f07dafdb1c5a42435db3" upstream="refs/tags/2.21" path="packages/modules/NetworkStack"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release" name="platform/packages/modules/TestModule" path="packages/modules/TestModule" revision="3523a2f0f9b12d4e60374af63aae14f75a2b4c10" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-fs" name="platform/packages/providers/ApplicationsProvider" path="packages/providers/ApplicationsProvider" revision="76a98eab9b6e91a67761a3ac72a213704f21af63" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk-fs" name="platform/packages/providers/BlockedNumberProvider" path="packages/providers/BlockedNumberProvider" revision="84d4795dbd43aab60d379f6c2174a27da7bc56d2" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -658,19 +658,19 @@
   </project>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/apex" path="system/apex" revision="1bead2e698629a32254007197b2863a892dde00a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/ashmemd" path="system/ashmemd" revision="f6a8c0ab3d55616406bc92086577ad3b40827c7e" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_bpf" remote="picomisu" revision="picomisu" path="system/bpf"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_bpf" remote="picomisu" revision="e28007b5a369da5d075811fef6323ac27ce5faf0" upstream="refs/tags/2.21" path="system/bpf"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/bpfprogs" path="system/bpfprogs" revision="f24576134a4dd0d001cb97e3ba97e7245b1811d8" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_bt" remote="picomisu" revision="picomisu" path="system/bt"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_bt" remote="picomisu" revision="2bce6ffc94b997984d59564c7989a50bf2c34350" upstream="refs/tags/2.21" path="system/bt"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/ca-certificates" path="system/ca-certificates" revision="acb20ee916c95faf6603a0952fa93c1ab72c4e7a" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/chre" path="system/chre" revision="16065014f5cd4b07f8401746cb7ba9e7adad0825" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_connectivity_wificond" remote="picomisu" revision="picomisu" path="system/connectivity/wificond"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_connectivity_wificond" remote="picomisu" revision="01c379cd8d97ce16b9781855a16edd2c896da98f" upstream="refs/tags/2.21" path="system/connectivity/wificond"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/connectivity/wifilogd" path="system/connectivity/wifilogd" revision="c9065a36760c121dddb6ad02535dbbc2a004e050" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_core" remote="picomisu" revision="picomisu" path="system/core"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_core" remote="picomisu" revision="6dbfd69914bcbf80907224e81bcf5ebb8c87c6ed" upstream="refs/tags/2.21" path="system/core"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/extras" path="system/extras" revision="cc3a9ff3fb3a0638cd1920f0f6d6ed33613a9355" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/gatekeeper" path="system/gatekeeper" revision="dded773dcbfdfc2c6d7f4746b45804038cddb238" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/gsid" path="system/gsid" revision="fb3496b0e043edf4eea2870be32ea2d31d83bfb1" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/hardware/interfaces" path="system/hardware/interfaces" revision="fba33d289732d282142f15378bb4ce0db60e80d2" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_hwservicemanager" remote="picomisu" revision="picomisu" path="system/hwservicemanager"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_hwservicemanager" remote="picomisu" revision="82b96443334ff47a6528d6dca9c395c5b7f58199" upstream="refs/tags/2.21" path="system/hwservicemanager"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/iorap" path="system/iorap" revision="71fa50fba2c945778f9753c17d6db7fa9d3e9cda" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/keymaster" path="system/keymaster" revision="e6c4b5683a3512c5af0d7af237d7060977b916c1" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/libfmq" path="system/libfmq" revision="2172954aa2b2afd2de4f44b8fd25a1a1ac5f2d3e" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -686,7 +686,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/nvram" path="system/nvram" revision="fe5882d7ee29dd4e300f5bcfeba5b495a37504ae" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/wlan-service.lnx.5.0.c3" name="platform/system/qcom" path="vendor/qcom/opensource/softap" revision="c12dd49fdbd99f325fe986cd2d3518413c1f0dc2" upstream="refs/heads/wlan-service.lnx.5.0.c3"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/security" path="system/security" revision="9bc7969a4ce12c60e529603f7d70d79c0f299988" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_sepolicy" remote="picomisu" revision="picomisu" path="system/sepolicy"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_sepolicy" remote="picomisu" revision="09544b988e6ef8893509430339e3675696bb33f2" upstream="refs/tags/2.21" path="system/sepolicy"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/server_configurable_flags" path="system/server_configurable_flags" revision="9a33a58cf8d42e1369fd16304c8c2400953c0648" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/testing/gtest_extras" path="system/testing/gtest_extras" revision="57a5f6cb8ca627954f116e882618df1a10948eca" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/timezone" path="system/timezone" revision="4ba41749f4c46e6db2026f89635aeb120274bc45" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -696,7 +696,7 @@
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/tools/xsdc" path="system/tools/xsdc" revision="9bb47428f7eb21faa617f38ba217914d79b13548" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/ucontainer" path="system/ucontainer" revision="32ea48047fcb25bfedffde4b5ad29320d6e6f725" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/system/update_engine" path="system/update_engine" revision="62fea1154a52e71a18111fab80dcb9d36bf7e371" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project groups="aosp-android10-release,pdk" name="picomisu_system_vold" remote="picomisu" revision="picomisu" path="system/vold"/>
+  <project groups="aosp-android10-release,pdk" name="picomisu_system_vold" remote="picomisu" revision="d03ce1e41f1e0777e568e48163cee20e93de9f5e" upstream="refs/tags/2.21" path="system/vold"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk,projectarch,vts" name="platform/test/framework" path="test/framework" revision="7fc1f8ffc3b7e2c22aff2a5f1c5d7fd34237b261" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/test/mlts/benchmark" path="test/mlts/benchmark" revision="9c6ab9502478e6f9148854e8990893c0e39138c3" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="platform/test/mlts/models" path="test/mlts/models" revision="26e586d8a83dab024a6c033ff667b71673514cab" upstream="refs/heads/ks-aosp.lnx.2.0"/>
@@ -754,14 +754,14 @@
   <project dest-branch="refs/heads/camera-kernel.lnx.1.0" groups="cyborg" name="platform/vendor/opensource/camera-kernel" path="kernel/msm-4.19/techpack/camera" revision="9a2fd8d3c5dad3732c6779ae390aa22f60c16a51" upstream="refs/heads/camera-kernel.lnx.1.0"/>
   <project dest-branch="refs/heads/display-kernel.lnx.4.19.c3" groups="cyborg" name="platform/vendor/opensource/display-drivers" path="kernel/msm-4.19/techpack/display" revision="a8efca28fc449d0ec2c5acdd48334238cf25ce47" upstream="refs/heads/display-kernel.lnx.4.19.c3"/>
   <project dest-branch="refs/heads/video-kernel.lnx.4.19" groups="cyborg" name="platform/vendor/opensource/video-driver" path="kernel/msm-4.19/techpack/video" revision="6f8e71b643a9eedad18e582580a0a87c75357e41" upstream="refs/heads/video-kernel.lnx.4.19"/>
-  <project name="picomisu_vendor_qcom_opensource_audio" remote="picomisu" revision="picomisu" path="vendor/qcom/opensource/audio"/>
+  <project name="picomisu_vendor_qcom_opensource_audio" remote="picomisu" revision="6e478847e6a5bf8c7cd6abf672fb321f1fba6daf" upstream="refs/tags/2.21" path="vendor/qcom/opensource/audio"/>
   <project dest-branch="refs/heads/audio-hal.lnx.6.0.c4" name="platform/vendor/qcom-opensource/audio-hal/st-hal" path="vendor/qcom/opensource/audio-hal/st-hal" revision="c46426f5b59413fece03669268456496fae78622" upstream="refs/heads/audio-hal.lnx.6.0.c4"/>
   <project dest-branch="refs/heads/btcommon.lnx.5.0" name="platform/vendor/qcom-opensource/bluetooth-commonsys-intf" path="vendor/qcom/opensource/commonsys-intf/bluetooth" revision="a3f254d0c71a506204d867e2e916f1f47ed21560" upstream="refs/heads/btcommon.lnx.5.0">
     <linkfile dest="vendor/qcom/defs/board-defs/system/bt-commonsys-intf-board.mk" src="bt-commonsys-intf-board.mk"/>
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/bt-commonsys-intf-board.mk" src="bt-commonsys-intf-board.mk"/>
     <linkfile dest="vendor/qcom/defs/product-defs/system/bt-system-opensource-product.mk" src="bt-system-opensource-product.mk"/>
   </project>
-  <project name="picomisu_vendor_qcom_opensource_core-utils" remote="picomisu" revision="picomisu" path="vendor/qcom/opensource/core-utils">
+  <project name="picomisu_vendor_qcom_opensource_core-utils" remote="picomisu" revision="1bbc97c85991f3df6544e6658d02893d7881dadc" upstream="refs/tags/2.21" path="vendor/qcom/opensource/core-utils">
     <linkfile dest="vendor/qcom/build/tasks/QSSI_violators.mk" src="build/QSSI_violators.mk"/>
     <linkfile dest="vendor/qcom/build/tasks/QMAA_enforcement.mk" src="build/QMAA_enforcement.mk"/>
     <linkfile dest="build.sh" src="build/build.sh"/>
@@ -780,7 +780,7 @@
   </project>
   <project dest-branch="refs/heads/data.lnx.5.1" name="platform/vendor/qcom-opensource/dpm" path="vendor/qcom/opensource/dpm" revision="8c98e1d8b44806ee6765de339107f2f3cb64e427" upstream="refs/heads/data.lnx.5.1"/>
   <project dest-branch="refs/heads/data.lnx.5.1" name="platform/vendor/qcom-opensource/dpm-commonsys" path="vendor/qcom/opensource/commonsys/dpm" revision="9ff587035fddde3d21724b61f9807f347d69e03a" upstream="refs/heads/data.lnx.5.1"/>
-  <project name="picomisu_vendor_qcom_opensource_commonsys_fm" remote="picomisu" revision="picomisu" path="vendor/qcom/opensource/commonsys/fm"/>
+  <project name="picomisu_vendor_qcom_opensource_commonsys_fm" remote="picomisu" revision="f8903d6d531b5a98beea12a87af998d8206c5c4f" upstream="refs/tags/2.21" path="vendor/qcom/opensource/commonsys/fm"/>
   <project dest-branch="refs/heads/wigig.lnx.5.1" name="platform/vendor/qcom-opensource/fst-manager" path="vendor/qcom/opensource/fst-manager" revision="7cba7e9cc29e01e863bc18263a9b95830f4285b7" upstream="refs/heads/wigig.lnx.5.1"/>
   <project dest-branch="refs/heads/qcom-devices.lnx.5.0" name="platform/vendor/qcom-opensource/healthd-ext" path="vendor/qcom/opensource/healthd-ext" revision="e96727cdc5d0b0925299ec68faf46832e5032b22" upstream="refs/heads/qcom-devices.lnx.5.0"/>
   <project dest-branch="refs/heads/android-vendor-hals.lnx.1.1" name="platform/vendor/qcom-opensource/interfaces" path="vendor/qcom/opensource/interfaces" revision="a13dc01734df56ea47d3e806ed82e6fa1fa7941a" upstream="refs/heads/android-vendor-hals.lnx.1.1"/>
@@ -816,8 +816,8 @@
   <project dest-branch="refs/heads/wlan-service.lnx.5.0.c3" name="platform/vendor/qcom/wlan" path="device/qcom/wlan" revision="cfcaddcea3a329ae9ede94d376bd72b60cf565bf" upstream="refs/heads/wlan-service.lnx.5.0.c3"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release" name="toolchain/benchmark" revision="8a10ad96327b4bc67e80bf9e6695d48be3d35385" upstream="refs/heads/ks-aosp.lnx.2.0"/>
   <project dest-branch="refs/heads/ks-aosp.lnx.2.0" groups="aosp-android10-release,pdk" name="toolchain/pgo-profiles" revision="270d8380aab2949d2df4fc33ad67769245749529" upstream="refs/heads/ks-aosp.lnx.2.0"/>
-  <project path="device/pico/PICOA8110" name="picomisu_device_pico_PICOA8110" remote="picomisu" revision="picomisu"/>
-  <project path="external/gwp_asan" name="picomisu_external_gwp_asan" remote="picomisu" revision="picomisu"/>
-  <project path="external/picofacialdatadaemon" name="picomisu_external_picofacialdatadaemon" remote="picomisu" revision="picomisu"/>
-  <project path="picomisu" name="picomisu_tools" remote="picomisu" revision="main"/>
+  <project path="device/pico/PICOA8110" name="picomisu_device_pico_PICOA8110" remote="picomisu" revision="f428f8c574e766b54e4ad0ac5ffca7f936a53655" upstream="refs/tags/2.21"/>
+  <project path="external/gwp_asan" name="picomisu_external_gwp_asan" remote="picomisu" revision="aedacad440a46e3a2adc627cc3c7cc2a525a4bb8" upstream="refs/tags/2.21"/>
+  <project path="external/picofacialdatadaemon" name="picomisu_external_picofacialdatadaemon" remote="picomisu" revision="12ef25cd0afe29703adb7e4d7b2df62e6f962105" upstream="refs/tags/2.21"/>
+  <project path="picomisu" name="picomisu_tools" remote="picomisu" revision="9ecbda3d24a17247e7752899e440d2ee00a63399" upstream="refs/tags/2.21"/>
 </manifest>
